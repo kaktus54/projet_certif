@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<div>
+    <input class="boutonzoom"type="button" name="nom" value="retour">
+</div>
+<div>
+    <textarea class="textezoom" name="textarea"></textarea>
+</div>
+<div>ou ce trouve la photo</div>
+<div class="rating"><!--
+--><input name="stars" id="e5" type="radio"></a><label for="e5">☆</label><!--
+    --><input name="stars" id="e4" type="radio"></a><label for="e4">☆</label><!--
+    --><input name="stars" id="e3" type="radio"></a><label for="e3">☆</label><!--
+    --><input name="stars" id="e2" type="radio"></a><label for="e2">☆</label><!--
+    --><input name="stars" id="e1" type="radio"></a><label for="e1">☆</label>
+</div>
+{% endblock %}

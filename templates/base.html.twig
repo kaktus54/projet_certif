@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="formu.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <title>distirct art {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="mainForm" action="index.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" id="routage" name="routage" value="index" />
+    <div class="wrapper" >
+        <div class="content" >
+            <div class="fond" >
+                <img  class="image" src="logo.png">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <footer>
+        <table class="table1" >
+            <tr>
+                <td>
+                    <p>contact: <br /> <i class="fas fa-mail-bulk"></i>:<a href="districtartofficiel@gmail.com"> districtartofficiel@gmail.com</a></p>
+                </td>
+                <td id="tel" >
+                    <p>yann bersigotti<br /><i class="fas fa-mobile-alt"></i>:<a href="tel:0621968702" alt="0621968702">0621968702</a></p>
+                </td>
+            </tr>
+        </table> 
+    </footer>
+    </form>
+    <script type="text/javascript" src="formu.js"></script>
+    <script>document.onLoad = twPopConstructeur();</script>
+</body>
+
+</html>

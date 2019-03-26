@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+    <div >
+        <input id="btnretourgalerie" class="boutonenvoi" type="button" name="nom" value="retour">
+        <input class="boutonenvoi1" type="file" name="imgEnvoie" id="imgEnvoie" accept="image/png">
+        <input class="boutonenvoi" type="button" name="btnValidePhoto" id="btnValidePhoto" value="Envoyer">
+    </div>
+    <div>
+        <input type="text" class="titre centretitre" name="titreOeuvre" placeholder="Votre titre" id="titreOeuvre"/>
+        <textarea class="textezoom1" name="textarea" placeholder="Description" id="description"></textarea>
+
+    </div>
+{% endblock %}

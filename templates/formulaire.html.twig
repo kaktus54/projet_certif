@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<div >
+    <h2 class="titre" >FORMULAIRE D'INSCRIPTION</h2><br />
+        <span class="form_col" for="sexe" >Sexe :</span>
+        <label><input name="sex" type="radio" value="0" checked />Homme</label>
+        <label><input name="sex" type="radio" value="1" />Femme</label>
+        
+        <br />
+
+        <label class="form_col" for="lastName">Nom :</label>
+        <input name="lastName" id="lastName" type="text" placeholder="nom" />
+        <br />
+
+        <label class="form_col" for="firstName">Prénom :</label>
+        <input name="firstName" id="firstName" type="text" placeholder="prénom" />
+
+        <br />
+
+        <label class="form_col" for="mail">adresse mail:</label>
+        <input id="mail" type="email" name="mail" placeholder="adresse mail">
+
+        <br />
+
+        <label class="form_col" for="mailconf">confirmation adresse mail:</label>
+        <input id="mailconf" type="email" name="mailconf" placeholder="confirmation adresse mail">
+
+        <br />
+
+        <label class="form_col" for="login">votre nom d'artiste:</label>
+        <input name="login" id="login" type="text" placeholder= "pseudo"/>
+        <br />
+
+        <label class="form_col" for="pwd1">Mot de passe:</label>
+        <input name="pwd1" id="pwd1" type="password" placeholder="minimum de 8 caractères"/>
+
+        <br />
+
+        <label class="form_col" for="pwd2">Mot de passe confirmation:</label>
+        <input name="pwd2" id="pwd2" type="password" placeholder="confirmation du mot de passe"/>
+
+        <br />
+
+        <span class="form_col"></span>
+        <label><input id="check" name="news" type="checkbox" form="check" /> je valide mon inscription.</label>
+        <br />
+
+        <span class="form_col"></span>
+        <input id="btnInscription" type="button" value="M'inscrire"  /> 
+    </div>              
+</div>
+{% endblock %}

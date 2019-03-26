@@ -1,0 +1,67 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<div>
+    <table class="tablegalerie" >
+        <tr>
+            <td class="button3"><button id="btnenvoiPhoto" class="button3" name="envoyerphotos">envoyer photos</button></td>
+            <td class="button3"><input class="button3" type="search" name="" list="datalist" placeholder="recherche"></td>
+            <td class="button3"><button id="btnmodification" class="button3" name="modification">modification profil</button></td>
+            <td class="button3"><button id="btnquit" class="button3" name="deconnection">déconnection</button></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            {% set i = 0 %}
+            {% if images is defined %}
+                {% if images|length == 0 %}
+                    PAS DIMAGES
+                {% else %}
+                    {% for image in images %}
+                        {% set i = i + 1 %}
+                        {% if i is divisible by(2) %}
+                            <td>{{ include('galerie/include/cadreImage.html.twig' , {'image': image}) }}</td>
+                            </tr><tr>
+                        {% else %}
+                            <td>{{ include('galerie/include/cadreImage.html.twig' , {'image': image}) }}</td>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+        </tr>
+    </table>
+    <div class=row>
+        <div class= "col-md-5 pagin"></div>
+        <nav class="pagination1" aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="index.php?idPage={{ pageprec }}" aria-label="Previous">
+                        <span aria-hidden="true"><i class="fas fa-backward"></i></span>
+                        <span class="sr-only ">Previous</span>
+                    </a>
+                </li>
+                {% for y in 1.. nbImage + 1 %}
+                    {% if y is divisible by(4) %}
+                        {% set page = y / 4 %}
+                        <li class="page-item"><a class="page-link" href="index.php?idPage={{ page }}">{{ page }}</a></li>
+                        {% if(y%4 == 0) %}
+                        <li class="page-item"><a class="page-link" href="index.php?idPage={{ page +1 }}">{{ page+1 }}</a></li>
+
+                        {% endif %}
+
+                        {% endif %}
+                {% endfor %}
+                <li class="page-item">
+                <a class="page-link" href="index.php?idPage={{ pagesuiv }}" aria-label="Next">
+                    <span aria-hidden="true"><i class="fas fa-forward"></i></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+<h2 class="titre" >MODIFICATION PROFIL</h2><br />
+<form  id="myForm">
+    <span class="form_col" for="sexe" >Sexe:</span>
+    
+        {% if reponseSexe == 0 %}
+        <label><input name="sex" type="radio" value="0" checked />Homme</label>
+        <label><input name="sex" type="radio" value="1" />Femme</label>
+    {% else %}
+        <label><input name="sex" type="radio" value="0"/>Homme</label>
+        <label><input name="sex" type="radio" value="1" checked />Femme</label>
+    {% endif %}
+
+    <br />
+
+    <label class="form_col" for="lastName">Nom:</label>
+    <input name="lastName" id="lastName" type="text" value="{{ dataUser.nom }}"/>
+    <br />
+
+    <label class="form_col" for="firstName">Prénom:</label>
+    <input name="firstName" id="firstName" type="text" value="{{ dataUser.prenom }}"/>
+
+    <br />
+
+    <label class="form_col" for="mail">adresse mail:</label>
+    <input id="mail" type="email" name="mail" value="{{ dataUser.mail }}"/>
+
+    <br />
+
+    <label class="form_col" for="mailconf">confirmation adresse mail:</label>
+    <input id="mailconf" type="email" name="mailconf" value="{{ dataUser.mail }}"/>
+
+    <br />
+
+    <label class="form_col" for="login">votre nom d'artiste:</label>
+    <input name="login" id="login" type="text" value="{{ dataUser.pseudo }}"/>
+    <br />
+
+    <label class="form_col" for="pwd1">Mot de passe:</label>
+    <input name="pwd1" id="pwd1" type="password" value="{{ dataUser.mdp }}"/>
+
+    <br />
+
+    <label class="form_col" for="pwd2">Mot de passe confirmation:</label>
+    <input name="pwd2" id="pwd2" type="password" value="{{ dataUser.mdp }}"/>
+
+    <br />
+
+    <span class="form_col"></span>
+    <label><input id="check" name="news" type="checkbox" form="check" /> je valide mes modifications.</label>
+    <br />
+
+    <span class="form_col"></span>
+    <input id="btnModif" type="button" value="Modifier"  /> 
+
+</form>
+{% endblock %}
